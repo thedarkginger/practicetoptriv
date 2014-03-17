@@ -1,0 +1,30 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+$body-bg: #2980b9; 
+$navbar-default-bg: #c0392b; 
+$navbar-default-link-color: #ecf0f1; 
+$jumbotron-bg: #ecf0f1; 
+$brand-primary: #c0392b;
+$jumbotron-padding: 15px; 
+
+@import 'bootstrap';
+
+.jumbotron h1 {
+	font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	text-align: center; 
+	margin-top: -5px; 
+}
+
+#explain p {
+	font-size: 22px; 
+	
+}
+
+#enterbutton p {
+	text-align: center; 
+	font-size: 24px; 
+}
+
+.navbar-brand {
+	font-weight: bold; 
+}
