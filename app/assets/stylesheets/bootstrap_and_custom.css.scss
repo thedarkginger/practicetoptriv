@@ -20,9 +20,12 @@ $jumbotron-padding: 15px;
 	
 }
 
-#enterbutton p {
-	text-align: center; 
+#enterbutton {
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 24px; 
+	text-align: center;
+
 }
 
 .navbar-brand {

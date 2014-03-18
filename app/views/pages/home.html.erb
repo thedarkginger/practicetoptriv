@@ -4,13 +4,20 @@
 	<div id="explain"> 
 		<p>CrowdBracket is "crowdsourcing" 2014's March Madness. It's easy. You pick one corner of the bracket, and that will unlock the crowd brackets for viewing pleasure.</p> 
 		<br> 
-		<p>But that's not all. Other "national brackets" exist. However, CrowdBracket is going to break it down further to show you the picks of self-classified newbies, casual followers, and superfans.</p>  
+		<p>But that's not all. Other "national brackets" exist. However, CrowdBracket is going to break it down further to show you the picks of self-classified newbies, casual followers, and superfans too.</p>  
 	</div> 
 	<br> 
-	<div id="enterbutton">
-		<p>Ready to rumble? <%= link_to "Enter Your Picks", "#", class: "btn btn-primary btn-lg" %></p>
+	<% if user_signed_in? %>
+		# do something 
+	<% else %>
+		<div id="enterbutton">
+			<%= link_to "Log-In", new_user_session_path, class: "btn btn-primary btn-lg" %>
+			<%= link_to "Sign-Up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
 		<p>No sign-ups or sketchiness. Just pure sports nerdiness.</p> 
-	</div> 
+		</div> 
+	<% end %>
+
 </div>
+
 
 
