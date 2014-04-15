@@ -28,7 +28,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'bootstrap-sass'
 
 gem 'devise', '~> 3.2.4'
-gem 'paperclip', '~> 3.0'
+gem 'paperclip', github: 'thoughtbot/paperclip'
+
 
 #removed sqlite3 for heroku uploads
 
