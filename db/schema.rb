@@ -11,7 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415015223) do
+ActiveRecord::Schema.define(version: 20140419040420) do
+
+  create_table "answers", force: true do |t|
+    t.string   "answer"
+    t.boolean  "right",       default: false
+    t.integer  "question_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id"
+
+  create_table "chosen_answers", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "answer_id"
+    t.integer  "question_id"
+    t.integer  "points"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "chosen_answers", ["answer_id"], name: "index_chosen_answers_on_answer_id"
+  add_index "chosen_answers", ["question_id"], name: "index_chosen_answers_on_question_id"
+  add_index "chosen_answers", ["user_id"], name: "index_chosen_answers_on_user_id"
 
   create_table "pins", force: true do |t|
     t.string   "description"
@@ -25,6 +48,15 @@ ActiveRecord::Schema.define(version: 20140415015223) do
   end
 
   add_index "pins", ["user_id"], name: "index_pins_on_user_id"
+
+  create_table "questions", force: true do |t|
+    t.string   "question",                   null: false
+    t.integer  "points",         default: 0, null: false
+    t.datetime "published_from"
+    t.datetime "published_to"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
